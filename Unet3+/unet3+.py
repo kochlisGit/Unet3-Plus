@@ -76,7 +76,9 @@ def decoder_block(layers_to_upscale, inputs):
 def get_model(input_dim):
     inputs = layers.Input(input_dim)
 
-    e1 = encoder_block(inputs, n_filters=32, kernel_size=3, strides=1)
+    noisy_inputs = layers.GaussianNoise(stddev=0.2)(inputs)
+
+    e1 = encoder_block(noisy_inputs, n_filters=32, kernel_size=3, strides=1)
     e2 = encoder_block(e1, n_filters=64, kernel_size=3, strides=2)
     e3 = encoder_block(e2, n_filters=128, kernel_size=3, strides=2)
     e4 = encoder_block(e3, n_filters=256, kernel_size=3, strides=2)
