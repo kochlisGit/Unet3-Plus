@@ -20,9 +20,9 @@ The results of the accuracy of this model seem to be quite impressive. On liver 
 # My implementation differs from the original one, as I made some improvements to the model:
 
 1. Replaced all MaxPooling layers with **Conv2D + Strides**.
-2. Replaceed all UpSampling layers with **Conv2DTranspose + Strides**.
+2. Replaced all UpSampling layers with **Conv2DTranspose + Strides**.
 3. Added random **Gaussian Noise** at the inputs of the model, during the training time. This aims to prevent overfitting (Requires extra training time).
-4. Added dropout layers to the model (Requires extra training time).
+4. Added dropout layers to the model
 
 # Data Augmentations
 You can also add all sorts of data augmentation (Zooming, Shearing, Rotation, Padding, Brightness, Contrast, Saturation, etc) to images to improve the model's robustness.
